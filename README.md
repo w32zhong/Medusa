@@ -6,10 +6,12 @@ medusa-llm"><b>Blog</b></a> | <a href="ROADMAP.md"><b>Roadmap</b></a> |
 </p>
 
 ---
-*News* 🔥
-- [2023/09] Medusa won the [Chai Prize Grant](https://twitter.com/tianle_cai/status/1703891335147897341)🎉 The prize will be used as a development bounty for those who help us achieve milestones in our [roadmap](https://github.com/FasterDecoding/Medusa/issues/3)!
-- [2023/09] Medusa v0.1 is released! 
+Install `transformers-4.39.1`
 
+Run
+```
+CUDA_VISIBLE_DEVICES=0 python -m medusa.inference.cli --model FasterDecoding/medusa-vicuna-7b-v1.3 --load-in-8bit
+```
 ---
 ## Introduction
 
