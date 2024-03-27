@@ -7,7 +7,7 @@ name = "medusa-llm"
 version = "0.1"
 description = "Simple Framework for Accelerating LLM Generation with Multiple Decoding Heads"
 readme = "README.md"
-requires-python = ">=3.9"
+requires-python = ">=3.7"
 classifiers = [
     "Programming Language :: Python :: 3",
     "License :: OSI Approved :: Apache Software License",
