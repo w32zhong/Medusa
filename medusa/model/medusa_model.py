@@ -325,7 +325,8 @@ class MedusaModel(nn.Module):
                     skip_special_tokens=True,
                     spaces_between_special_tokens=False,
                     clean_up_tokenization_spaces=True,
-                )
+                ),
+                "out_tokens": input_ids[0, input_len:],
             }
 
             if self.tokenizer.eos_token_id in input_ids[0, input_len:]:

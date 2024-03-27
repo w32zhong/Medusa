@@ -10,6 +10,8 @@ Install `transformers-4.39.1`
 
 Run
 ```
+CUDA_VISIBLE_DEVICES=0 python -m medusa.inference.test --model FasterDecoding/medusa-vicuna-7b-v1.3 --load-in-8bit
+# or
 CUDA_VISIBLE_DEVICES=0 python -m medusa.inference.cli --model FasterDecoding/medusa-vicuna-7b-v1.3 --load-in-8bit
 ```
 ---
