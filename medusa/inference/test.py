@@ -38,5 +38,6 @@ for stream in model.medusa_generate(input_ids, temperature=args.temperature, max
     print(tokenizer.decode(tokens[last_len:]), end=' ', flush=True)
     last_len = len(tokens)
 t1 = time.time()
+print('')
 time_delta = t1 - t0
 print('[speed]', time_delta, last_len, last_len / time_delta)
