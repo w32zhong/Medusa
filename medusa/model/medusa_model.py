@@ -214,7 +214,7 @@ class MedusaModel(nn.Module):
         input_ids,
         attention_mask=None,
         temperature=0.0,
-        max_steps=512,
+        max_length=512,
         # The hyperparameters below are for the Medusa
         # top-1 prediciton for the next token, top-7 predictions for the next token, top-6 predictions for the next next token.
         medusa_choices=mc_sim_7b_63,
@@ -280,7 +280,7 @@ class MedusaModel(nn.Module):
         new_token = 0
         last_round_token = 0
 
-        for idx in range(max_steps):
+        for idx in range(max_length):
             # Generate candidates with topk predictions from Medusa heads
             candidates, tree_candidates = generate_candidates(
                 medusa_logits,
@@ -330,4 +330,6 @@ class MedusaModel(nn.Module):
             }
 
             if self.tokenizer.eos_token_id in input_ids[0, input_len:]:
+                break
+            if input_ids.shape[1] >= max_length:
                 break
