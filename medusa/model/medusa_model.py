@@ -303,6 +303,7 @@ class MedusaModel(nn.Module):
             best_candidate, accept_length = evaluate_posterior(
                 logits, candidates, temperature, posterior_threshold, posterior_alpha
             )
+            if hasattr(self, 'timer'): self.timer._hist['bonus tokens'].append(accept_length.item())
 
             # Update the input_ids and logits
             input_ids, logits, medusa_logits, new_token = update_inference_inputs(
